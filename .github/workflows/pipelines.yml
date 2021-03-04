@@ -23,9 +23,3 @@ jobs:
       
     - name: Tag the Docker image
       run: docker tag webapp:$IMAGE_TAG devolutionary/webapp:$IMAGE_TAG
-      
-      
-      
-      
-      
-//
