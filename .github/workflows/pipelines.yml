@@ -7,6 +7,7 @@ on:
     branches: [ main ]
     
 env:
+  DOCKER_REPOSITORY: devolutionary
   IMAGE_TAG: ${{ github.run_number }}
 
 jobs:
@@ -22,4 +23,4 @@ jobs:
       run: docker build ./app-dotnet --file ./app-dotnet/Dockerfile --tag webapp:$IMAGE_TAG
       
     - name: Tag the Docker image
-      run: docker tag webapp:$IMAGE_TAG devolutionary/webapp:$IMAGE_TAG
+      run: docker tag webapp:$IMAGE_TAG ${DOCKER_REPOSITORY}/webapp:$IMAGE_TAG
